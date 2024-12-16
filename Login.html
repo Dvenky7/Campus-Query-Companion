@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Here</title>
+</head>
+<body>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            background-color: beige;
+            min-height: 100%;
+            margin: 10%;
+        }
+        .container{
+            position: relative;
+            width: 770px;
+            /* max-width: 100%;
+            min-height: 500px; */
+            height: 500px;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 20px rgba(0, 0, 0, 0.22);
+
+        }
+        .singup .singin{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            transition: all 0.5s ease-in-out;
+        }
+        .singup{
+            width: 50%;
+            opacity: 0;
+            z-index: 1;
+            
+        }
+        .singin{
+            width: 50%;
+            z-index: 2;
+            
+        }
+        form{
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 50px;
+            height: 100%;
+            text-align: center;
+            position: relative;
+            bottom: 60px;
+        }
+        h1{
+            font-weight: bold;
+            margin: 0%;
+        }
+        input{
+            background-color: #eee;
+            padding: 12px 15px;
+            margin: 8px 15px;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        button{
+            color: #000;
+            background: yellow;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 5px;
+            margin: 20px;
+            border-radius: 20px;
+            border: 1px solid yellow;
+            outline: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in-out;
+            cursor: pointer;
+            width: 3cm;
+        }
+        button:active{
+            transform: scale(0.5);
+        }
+        .log, .sub{
+            background-color: yellow;
+            border: 2px solid yellow;
+
+        }
+        .full{
+            position: relative;
+            bottom: 390px;
+            left: 400px;
+            border-top-left-radius:100px ;
+            border-bottom-left-radius:100px ;
+            border: solid black;
+            padding: 30px;
+            height: 400px;
+        }
+       
+    </style>
+    <div class="container">
+        <div class="singup">
+            <form action="#">
+                <h1>
+                    Student Login
+                </h1>
+                <input type="text" placeholder="Id" required>
+                <input type="password" placeholder="password" required>
+                <button class="log">
+                    
+                </button>
+                
+            </form>
+        </div>
+        <div class="singin">
+            <form action="#">
+                <h1 class="name" id="name1">
+                    Parent Login
+                </h1>
+                <input type="text" placeholder="Id" required>
+                <input type="password" placeholder="password" required>
+                <button class="sub" >
+                   <a href="{{url_for('index') }}"> Submit</a>
+                </button>
+            </form>
+            <div class="full">
+                <div class="left">
+                    <h1>Faculty Login</h1>
+                    <button class="signin1" onclick="clickevent()" > Log in </button>
+                </div>
+                <div class="Right">
+                    <h1>Student Login</h1>
+                    <button class="signin2" id="buttonq" onclick="clickevent2()"> Log in</button>
+                    <h1>
+                        Parent Login
+                    </h1>
+                    <button class="signin2" onclick="clickevent3()">Log iN</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function clickevent(){
+            document.getElementById("name1").innerHTML="Faculty Login";
+        }
+        function clickevent2(){
+            document.getElementById("name1").innerHTML="Student Login";
+        }
+        function clickevent3(){
+            document.getElementById("name1").innerHTML="Parent Login";
+        }
+    </script>
+</body>
+</html>
